@@ -1,4 +1,4 @@
-# dynamodemo
-A Kotlin Spring Boot, Spring WebFlux based reactive DEMO application coupled with DynamoDB
+# kotlin-kafka-dynamo-demo
+An event driven Kotlin application built using Spring Boot and Spring WebFlux coupled with DynamoDB and Kafka
 
-For a walkthrough of the project, go to this [page](https://medium.com/@billydharmawan/how-to-build-a-reactive-microservice-api-with-spring-boot-spring-webflux-and-dynamodb-using-kotlin-e1be3e99b15e) and then, continue with this [page](https://medium.com/@billydharmawan/a-guide-to-use-spring-boots-configurationproperties-annotation-in-kotlin-s-dataclass-1341c63110f4).
+For a walkthrough of the project, go to this [page](https://medium.com/@billydharmawan/a-comprehensive-guide-to-build-an-event-driven-application-with-kotlin-kafka-and-dynamodb-a8d9bfb19e42).
