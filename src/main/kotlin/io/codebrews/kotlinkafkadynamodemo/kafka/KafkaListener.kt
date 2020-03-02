@@ -1,6 +1,8 @@
-package io.codebrews.kotlinkafkadynamodemo
+package io.codebrews.kotlinkafkadynamodemo.kafka
 
 import io.codebrews.createuserrequest.CreateUserRequest
+import io.codebrews.kotlinkafkadynamodemo.config.KafkaConfigProperties
+import io.codebrews.kotlinkafkadynamodemo.service.CreateUserRequestHandler
 import io.confluent.kafka.serializers.KafkaAvroDeserializerConfig
 import org.apache.kafka.clients.consumer.ConsumerConfig
 import org.slf4j.Logger

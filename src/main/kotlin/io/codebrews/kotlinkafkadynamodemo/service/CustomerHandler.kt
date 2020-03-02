@@ -1,6 +1,10 @@
-package io.codebrews.kotlinkafkadynamodemo
+package io.codebrews.kotlinkafkadynamodemo.service
 
 import io.codebrews.createuserrequest.CreateUserRequest
+import io.codebrews.kotlinkafkadynamodemo.Customer
+import io.codebrews.kotlinkafkadynamodemo.CustomerPersist
+import io.codebrews.kotlinkafkadynamodemo.repo.CustomerRepo
+import io.codebrews.kotlinkafkadynamodemo.kafka.KafkaPublisher
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Component

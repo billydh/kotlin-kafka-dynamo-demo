@@ -1,12 +1,12 @@
-package io.codebrews.kotlinkafkadynamodemo
+package io.codebrews.kotlinkafkadynamodemo.repo
 
+import io.codebrews.kotlinkafkadynamodemo.CustomerPersist
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Repository
 import reactor.core.publisher.Mono
 import software.amazon.awssdk.services.dynamodb.DynamoDbAsyncClient
-import software.amazon.awssdk.services.dynamodb.DynamoDbClient
 import software.amazon.awssdk.services.dynamodb.model.AttributeValue
 import software.amazon.awssdk.services.dynamodb.model.GetItemRequest
 import software.amazon.awssdk.services.dynamodb.model.PutItemRequest

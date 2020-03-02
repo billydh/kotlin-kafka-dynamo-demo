@@ -1,6 +1,7 @@
-package io.codebrews.kotlinkafkadynamodemo
+package io.codebrews.kotlinkafkadynamodemo.kafka
 
 import io.codebrews.createuserrequest.CreateUserRequest
+import io.codebrews.kotlinkafkadynamodemo.config.KafkaConfigProperties
 import io.codebrews.usercreatedevent.UserCreatedEvent
 import org.apache.kafka.clients.producer.ProducerConfig
 import org.apache.kafka.clients.producer.ProducerRecord
