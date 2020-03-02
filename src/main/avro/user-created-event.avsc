@@ -1,0 +1,19 @@
+{
+  "namespace": "io.codebrews.usercreatedevent",
+  "type": "record",
+  "name": "UserCreatedEvent",
+  "fields": [
+    {
+      "name": "userId",
+      "type": "string"
+    },
+    {
+      "name": "email",
+      "type": "string"
+    },
+    {
+      "name": "creationTimestamp",
+      "type": "long"
+    }
+  ]
+}
