@@ -44,7 +44,7 @@ class KafkaListener(kafkaConfigProperties: KafkaConfigProperties,
             .receive()
             .concatMap {record ->
                 createUserRequestHandler.handleCreateUserRequest(record.value())
-                    .flatMap { record.receiverOffset().commit() }
+                    .then(record.receiverOffset().commit())
                     .doOnError { logger.error("Exception while trying to consume and commit a CreateUserRequest message", it) }
             }
             .subscribe()
