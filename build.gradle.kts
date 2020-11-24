@@ -2,10 +2,10 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import io.spring.gradle.dependencymanagement.dsl.DependencyManagementExtension
 
 plugins {
-	id("org.springframework.boot") version "2.2.2.RELEASE"
-	id("io.spring.dependency-management") version "1.0.8.RELEASE"
-	kotlin("jvm") version "1.3.61"
-	kotlin("plugin.spring") version "1.3.61"
+	id("org.springframework.boot") version "2.4.0"
+	id("io.spring.dependency-management") version "1.0.10.RELEASE"
+	kotlin("jvm") version "1.4.20"
+	kotlin("plugin.spring") version "1.4.20"
 }
 
 group = "io.codebrews"
@@ -26,7 +26,7 @@ buildscript {
 	}
 
 	dependencies {
-		classpath("com.commercehub.gradle.plugin:gradle-avro-plugin:0.17.0")
+		classpath("com.commercehub.gradle.plugin:gradle-avro-plugin:0.21.0")
 	}
 }
 
@@ -37,12 +37,9 @@ dependencies {
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-	implementation("software.amazon.awssdk:dynamodb:2.10.63")
-
-	implementation("org.apache.avro:avro:1.9.2")
-
-	implementation("io.projectreactor.kafka:reactor-kafka:1.2.2.RELEASE")
-	implementation("io.confluent:kafka-avro-serializer:5.4.0")
+	implementation("software.amazon.awssdk:dynamodb")
+	implementation("io.projectreactor.kafka:reactor-kafka:1.3.0")
+	implementation("io.confluent:kafka-avro-serializer:6.0.0")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
 		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
@@ -50,9 +47,15 @@ dependencies {
 	testImplementation("io.projectreactor:reactor-test")
 }
 
+configurations {
+	all {
+		exclude(group = "junit", module = "junit")
+	}
+}
+
 configure<DependencyManagementExtension> {
 	imports {
-		mavenBom("software.amazon.awssdk:bom:2.10.42")
+		mavenBom("software.amazon.awssdk:bom:2.15.33")
 	}
 }
 
