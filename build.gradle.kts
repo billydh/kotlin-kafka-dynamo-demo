@@ -38,13 +38,16 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	implementation("software.amazon.awssdk:dynamodb")
-	implementation("io.projectreactor.kafka:reactor-kafka:1.3.0")
+	implementation("io.projectreactor.kafka:reactor-kafka")
 	implementation("io.confluent:kafka-avro-serializer:6.0.0")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
 		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
 	}
 	testImplementation("io.projectreactor:reactor-test")
+	testImplementation("org.springframework.kafka:spring-kafka-test")
+	testImplementation("org.springframework.kafka:spring-kafka")
+	testImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0")
 }
 
 configurations {
