@@ -1,0 +1,12 @@
+application:
+  dynamo:
+    customer-table-name: "demo-customer-info"
+    region: "ap-southeast-2"
+    endpoint: "http://localhost:8042"
+  kafka:
+    broker: "${spring.embedded.kafka.brokers:#{localhost:9092}}"
+    serializer: io.codebrews.kotlinkafkadynamodemo.MockKafkaAvroSerializer
+    deserializer: io.codebrews.kotlinkafkadynamodemo.MockKafkaAvroDeserializer
+    schema-registry-url: "http://localhost:8081"
+    create-user-request-topic: "create-user-request"
+    user-created-event-topic: "user-created-event"

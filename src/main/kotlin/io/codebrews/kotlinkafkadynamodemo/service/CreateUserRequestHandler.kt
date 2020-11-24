@@ -18,7 +18,7 @@ class CreateUserRequestHandler(private val customerRepo: CustomerRepo,
 
     private val logger: Logger = LoggerFactory.getLogger(javaClass)
 
-    fun handleCreateUserRequest(request: CreateUserRequest): Mono<Void> {
+    fun handleCreateUserRequest(request: CreateUserRequest): Mono<Unit> {
         val customerId: String = generateCustomerId()
         val customerPersist = CustomerPersist(customerId, request.getEmail(), request.getFirstName(), request.getLastName())
 
@@ -27,6 +27,7 @@ class CreateUserRequestHandler(private val customerRepo: CustomerRepo,
                 kafkaPublisher.publishUserCreatedEvent(KafkaPublisher.generateMessageKey(),
                     UserCreatedEvent(customerId, customerPersist.emailAddress, Instant.now().toEpochMilli()))
             }
+            .map { }
             .doOnError { logger.error("Exception while trying to create a new user", it) }
     }
 
